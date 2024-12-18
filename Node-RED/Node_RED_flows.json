@@ -1,0 +1,162 @@
+[
+    {
+        "id": "4b8bbb49776b1e62",
+        "type": "tab",
+        "label": "Flux 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "800791a9d0ada6d3",
+        "type": "mqtt in",
+        "z": "4b8bbb49776b1e62",
+        "name": "Connexion",
+        "topic": "application/9b46a452-62a9-48e2-be6a-dd6cb2784f26/device/d45599a43936c8b4/#",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "d06f01f3fdb47e92",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 200,
+        "wires": [
+            [
+                "86e66aef13fdc65e"
+            ]
+        ]
+    },
+    {
+        "id": "255d40b6a058ef63",
+        "type": "base64",
+        "z": "4b8bbb49776b1e62",
+        "name": "",
+        "action": "",
+        "property": "payload",
+        "x": 660,
+        "y": 200,
+        "wires": [
+            [
+                "a935502a915d3486",
+                "bb7f40ce6a76bf1b"
+            ]
+        ]
+    },
+    {
+        "id": "86e66aef13fdc65e",
+        "type": "function",
+        "z": "4b8bbb49776b1e62",
+        "name": "function 1",
+        "func": "msg.payload = msg.payload.data;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 200,
+        "wires": [
+            [
+                "255d40b6a058ef63"
+            ]
+        ]
+    },
+    {
+        "id": "a935502a915d3486",
+        "type": "debug",
+        "z": "4b8bbb49776b1e62",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "bb7f40ce6a76bf1b",
+        "type": "ui_gauge",
+        "z": "4b8bbb49776b1e62",
+        "name": "",
+        "group": "c8d5a1addf7d249f",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 850,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "d06f01f3fdb47e92",
+        "type": "mqtt-broker",
+        "name": "LoRa Server",
+        "broker": "your-mqtt-server.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "c8d5a1addf7d249f",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "ccddb34295f90e76",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ccddb34295f90e76",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
