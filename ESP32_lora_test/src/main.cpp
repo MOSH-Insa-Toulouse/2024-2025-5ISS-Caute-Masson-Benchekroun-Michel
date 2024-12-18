@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include <SoftwareSerial.h>
-#include <rn2xx3.h>
+
 
 
 // Define the SoftwareSerial pins
@@ -12,13 +12,13 @@ const uint8_t devEUI[8] = {0xD4, 0x55, 0x99, 0xA4, 0x39, 0x36, 0xC8, 0xB4};    /
 const uint8_t appEUI[8] = {0x0D, 0xAE, 0xA4, 0x0E, 0x1D, 0xF3, 0xAA, 0x6E}; //0DAEA40E1DF3AA6E
 const uint8_t appKey[16] = {0x20, 0x24, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, }; //20240000000000000000000000000000
 
+
 String rst_response = "";
 int set_flag = 0;
 
 // Create a SoftwareSerial object
 SoftwareSerial loraSerial(rxPin, txPin);
 
-rn2xx3 myLora(loraSerial);
 
 // Timer pointer
 hw_timer_t *My_timer = NULL;
@@ -158,8 +158,9 @@ void loop() {
   delay(100);
   digitalWrite(rst, HIGH);
   delay(10000);
+
   loraSendCommand("sys get vdd");
-  delay(1000);
+
 
   //loraSendCommand("mac pause");
   //delay(1000);
@@ -167,7 +168,10 @@ void loop() {
   //delay(1000);
   //MacSet("devuei", devEUI, 8);
   //delay(1000);
-  MacSet("appeui", appEUI, 8); //don't tested yet, might work
+  loraSendCommand("sys get hweui");
+  delay(1000);
+  //MacSet("appeui", appEUI, 8); //don't tested yet, might work
+  loraSendCommand("mac set appeui 0DAEA40E1DF3AA6E");
   delay(1000);
   MacSet("appkey", appKey, 16);
   delay(1000);
