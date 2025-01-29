@@ -1,5 +1,5 @@
 **Repository structure :**
-- __LoRa\_module.ino__ : Smart device code, from the logic for using the gas sensor, to the BLE and LoRa connectivity, see [LoRa\_module.ino](2024-2025-5ISS-Caute-Masson-Benchekroun-Michel/LoRa_module.ino)
+- __LoRa\_module.ino__ : Smart device code, from the logic for using the gas sensor, to the BLE and LoRa connectivity, see [LoRa\_module.ino](LoRa_module.ino)
 - __Shield\_Gas\_Sensor__ : Design of the Arduino UNO shield for the smart device.
 - __Node-RED__ : Node RED application code
 - __Documentation__ : Datasheet of the used components
