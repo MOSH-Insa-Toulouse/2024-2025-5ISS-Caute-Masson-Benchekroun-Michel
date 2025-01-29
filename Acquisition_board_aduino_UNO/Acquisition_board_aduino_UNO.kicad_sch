@@ -971,7 +971,6 @@
     )
   )
 
-
   (junction (at 175.26 49.53) (diameter 0) (color 0 0 0 0)
     (uuid 12f77e98-d88f-448f-a38b-38a80f70c327)
   )
@@ -2432,6 +2431,9 @@
     )
     (path "/9d4edd27-cf73-4686-a8cb-37d24d720791"
       (reference "R7") (unit 1) (value "330") (footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical")
+    )
+    (path "/e7ad444c-0870-40a7-9005-835b881398be/c566607a-ed73-4dd1-bced-a0f9e98d27e4"
+      (reference "R8") (unit 1) (value "330") (footprint "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical")
     )
     (path "/027081ad-fcc6-4e20-b822-aa10d8ee21a9"
       (reference "U1") (unit 1) (value "LTC1050ACN8_PBF") (footprint "Package_DIP:DIP-8_W7.62mm")
